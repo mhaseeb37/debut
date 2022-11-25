@@ -142,7 +142,7 @@
                {% assign optionColor = true %}
             {% endif %}
           {% endfor %}
-          {% if variantSize > 1 and optionColor == true %}
+          {% if variantSize >= 1 and optionColor == true %}
           {% for option in product.options %}
              {% if option == 'Color' or option =='color' or option =='Colour' or option =='colour' or option =='colors' or option =='Colors' %}
              {% assign colorPoint = forloop.index0 %}
