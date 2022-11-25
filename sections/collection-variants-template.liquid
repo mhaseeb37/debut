@@ -154,8 +154,9 @@
                {{ variant.image.src }}
              {% endcapture %}
                {% unless colorNames contains colorName %}
-                  <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}"><img src={{ variant.image.src | img_url:'master' }}>
-                    {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+                 {% assign variantImgSrc = variant.image.src | img_url:'master' %}
+                  <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+                    {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor, variant_image: variantImgSrc %}
                   </li>
                   {% capture UpdatedColorList %}
                 {{colorNames | append: colorName | append: " " }}
