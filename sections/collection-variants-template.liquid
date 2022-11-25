@@ -149,7 +149,7 @@
              {% assign colorNames = '' %}
              {% assign colorName = '' %}
              {% for variant in product.variants %}
-             {% capture color %}
+             {% capture colorName %}
              {{ variant.options[colorPoint] }}
              {% endcapture %}
                {% unless colorNames contains colorName %}
