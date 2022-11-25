@@ -166,7 +166,9 @@
     {% endif %}
   {% endfor %}
   {% else %}
-  <-- INSERT PRODUCT LOOP -->
+  <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">{{ optionName }}
+                {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+              </li>
   {% endif %}
               
         {% else %}
