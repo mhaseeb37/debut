@@ -138,7 +138,7 @@
           {% assign optionColor = false %}
           {% for option in product.options %}
             {% assign optionName =  option | split: " " | first | downcase %}
-            {% if option == optionName %}
+            {% if  optionName == option %}
               {% assign optionColor = true %}
             {% endif %}
             {% if optionColor %}
