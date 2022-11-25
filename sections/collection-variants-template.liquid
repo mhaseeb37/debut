@@ -141,11 +141,13 @@
             {% if  optionName == "Color" or optionName == "color" %}
               {% assign optionColor = true %}
             {% endif %}
+            {% for variant in product.variants %}
             {% if optionColor %}
               <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
                 {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
               </li>
             {% endif %}
+              {% endfor %}
           {% endfor %}
         {% else %}
           {% comment %}
