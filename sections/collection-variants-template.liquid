@@ -137,7 +137,7 @@
         {% for product in collection.products %}
           {% for variant in product.variants %}
             <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-            {{ variant.title }}
+            {{ variant.title | split: " " | first | downcase }}
               {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
             </li>
           {% endfor %}
