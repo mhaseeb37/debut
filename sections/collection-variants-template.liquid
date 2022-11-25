@@ -140,6 +140,7 @@
             {% assign optionName =  option | split: " " | first | downcase %}
             {% if  optionName == "Color" or optionName == "color" %}
               {% assign optionColor = true %}
+              {% assign optionColorIndex = forloop.index0 %}
             {% endif %}
             {% for variant in product.variants %}
             {% if optionColor %}
