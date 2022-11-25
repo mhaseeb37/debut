@@ -138,7 +138,7 @@
           {% assign optionColor = false %}
           {% assign variantSize = product.variants.size %}
           {% for option in product.options %}
-            {% if option == 'Color' %}
+            {% if option == 'Color' or option =='color' %}
                {% assign optionColor = true %}
             {% endif %}
           {% endfor %}
