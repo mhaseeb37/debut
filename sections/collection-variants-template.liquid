@@ -136,6 +136,7 @@
       <ul class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
           {% assign optionColor = false %}
+          {% assign optionColorIndex = '' %}
           {% for option in product.options %}
             {% assign optionName =  option | split: " " | first | downcase %}
             {% if  optionName == "Color" or optionName == "color" %}
