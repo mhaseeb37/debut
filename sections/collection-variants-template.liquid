@@ -137,7 +137,7 @@
         {% for product in collection.products %}
           {% for option in product.options %}
             <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-            {{ option.title | split: " " | first | downcase }}
+            {{ option | split: " " | first | downcase }}
               {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
             </li>
           {% endfor %}
