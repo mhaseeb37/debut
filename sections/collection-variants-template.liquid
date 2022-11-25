@@ -153,6 +153,7 @@
    {% endcapture %}
 
      {% unless colorlist contains color %}
+       {{ color }}
         <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">{{ optionName }}
                 {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
               </li>
