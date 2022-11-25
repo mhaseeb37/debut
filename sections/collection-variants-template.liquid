@@ -150,10 +150,11 @@
              {% assign colorName = '' %}
              {% for variant in product.variants %}
              {% capture colorName %}
-             {{ variant.options[colorPoint] }}
+              {{ variant.options[colorPoint] }}
+               {{ variant.image.src }}
              {% endcapture %}
                {% unless colorNames contains colorName %}
-                  <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">{{ optionName }}
+                  <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}"><img src={{ variant.image.src }}>
                     {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
                   </li>
                   {% capture UpdatedColorList %}
