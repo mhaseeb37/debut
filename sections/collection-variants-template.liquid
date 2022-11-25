@@ -147,17 +147,17 @@
              {% if option == 'Color' or option =='color' or option =='Colour' or option =='colour' or option =='colors' or option =='Colors' %}
              {% assign colorPoint = forloop.index0 %}
              {% assign colorNames = '' %}
-             {% assign color = '' %}
+             {% assign colorName = '' %}
              {% for variant in product.variants %}
              {% capture color %}
              {{ variant.options[colorPoint] }}
              {% endcapture %}
-               {% unless colorNames contains color %}
+               {% unless colorNames contains colorName %}
                   <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">{{ optionName }}
                     {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
                   </li>
                   {% capture UpdatedColorList %}
-                {{colorNames | append: color | append: " " }}
+                {{colorNames | append: colorName | append: " " }}
                 {% endcapture %}
                 {% assign colorNames = UpdatedColorList %}
                 {% endunless %}
