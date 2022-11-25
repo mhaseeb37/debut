@@ -135,9 +135,11 @@
 
       <ul class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
-          <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-            {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
-          </li>
+          {% for variant in product.variants %}
+            <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+              {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+            </li>
+          {% endfor %}
         {% else %}
           {% comment %}
           Add default products to help with onboarding for collections/all only.
