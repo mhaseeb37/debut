@@ -151,7 +151,6 @@
              {% for variant in product.variants %}
              {% capture colorName %}
               {{ variant.options[colorPoint] }}
-               {{ variant.image.src }}
              {% endcapture %}
                {% unless colorNames contains colorName %}
                  {% assign variantImgSrc = variant.image.src | img_url:'master' %}
@@ -168,8 +167,8 @@
             {% endfor %}
             {% else %}
             <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">{{ optionName }}
-                          {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
-                        </li>
+              {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+            </li>
             {% endif %}
               
         {% else %}
