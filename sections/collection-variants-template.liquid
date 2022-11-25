@@ -149,15 +149,15 @@
               {{ variant.options[index] }}
             {% endcapture %}
               {% unless colorlist contains color %}
-                <li><span class="color-{{color | handle }}"><a href="{{variant.id}}">{{color}}</a></span></li>
+                <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+                {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
+              </li>
                 {% capture tempList %}
                   {{colorlist | append: color | append: ' '}}
                 {% endcapture %}
                 {% assign colorlist = tempList %}
               {% endunless %}
-<!--               <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
-                {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
-              </li> -->
+              
               {% endfor %}
           {% endfor %}
         {% else %}
