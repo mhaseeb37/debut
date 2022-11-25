@@ -142,7 +142,7 @@
               {% assign optionColor = true %}
             {% endif %}
             {% if optionColor %}
-              <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
+              <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">{{ optionName }}
                 {% render 'product-card-grid', max_height: max_height, product: product, show_vendor: section.settings.show_vendor %}
               </li>
             {% endif %}
