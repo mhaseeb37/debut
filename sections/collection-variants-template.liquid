@@ -144,13 +144,13 @@
           {% endfor %}
           {% if variantSize > 1 and optionColor == true %}
           {% for option in product.options %}
-             {% if option == 'Color' %}
-             {% assign index = forloop.index0 %}
+             {% if option == 'Color' or option =='color' %}
+             {% assign colorPoint = forloop.index0 %}
              {% assign colorlist = '' %}
              {% assign color = '' %}
              {% for variant in product.variants %}
              {% capture color %}
-             {{ variant.options[index] }}
+             {{ variant.options[colorPoint] }}
              {% endcapture %}
                {% unless colorlist contains color %}
                   <li class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">{{ optionName }}
